@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniproject</title>
+    
+    <link rel="stylesheet" href="./CSS/containpagecss.css">
+    <!-- <link rel="stylesheet" href="./CSS/adt.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair:ital,wght@1,300&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body onload="ready()">
+
+    <!-- nav-bar -->
+    <div>
+    <div class="navbar"> <nav class="sticky_header">
+        <div class="container nav-container flex">
+            <div class="nav-left">
+                <h1 class="logo">ADT</h1>
+            </div>
+            <div class="nav-right flex">
+                <ul class="nav-list-container flex">
+                    <li><a class="nav-list" href="index.html"> HOME</a></li>
+                    <li><a class="nav-list" href="about.html">ABOUT US</a></li>
+                    <li><a class="nav-list" href="contact.html">CONTACT US</a></li>
+                </ul>
+                <div class="search-box flex">
+                    <img src="IMAGES/SEARCH-ICON.png" class="search-icon" alt="">
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+  
+<div class="sidebar">
+  <a href="#topic1">ADT</a>
+  <a href="#topic2">Features of ADT</a>
+  <a href="#topic3">Types of ADTs</a>
+  <a href="#topic4">List ADT</a>
+  <a href="#topic5">Queue ADT</a>
+  <a href="#topic6 ">Stack ADT</a>
+  <a href="#topic7">Introduction to Stack</a>
+  <a href="#topic8">Standard Stack Operations</a>
+  <a href="#topic9">Array Representation of Stack
+  </a>
+  <a href="#topic10">Linked List Representation of Stack
+  </a>
+  <a href="#topic11">Recursion</a>
+
+</div>
+<nav>
+  <div class="container nav-container flex">
+      <div class="nav-left">
+          <h1 class="logo">MyProject</h1>
+      </div>
+      <div class="nav-right flex">
+          <ul class="nav-list-container flex">
+              <li><a class="nav-list" href="#"> HOME</a></li>
+              <li><a class="nav-list" href="#">ABOUT US</a></li>
+              <li><a class="nav-list" href="#">CONTACT US</a></li>
+          </ul>
+          <div class="search-box flex">
+              <img src="IMAGES/SEARCH-ICON.png" class="search-icon" alt="">
+              <input type="text" placeholder="Search">
+          </div>
+      </div>
+  </div>
+</nav> 
+<div class="content">
+  <a><h1 id="topic1" class="header-text">ADT</h1></a>
+<p>
+An abstract data type is an abstraction of a data structure that provides only the interface to which the data structure must adhere. The interface does not give any specific details about something should be implemented or in what programming language.
+<br><br>
+In other words, we can say that abstract data types are the entities that are definitions of data and operations but do not have implementation details. In this case, we know the data that we are storing and the operations that can be performed on the data, but we don't know about the implementation details. The reason for not having implementation details is that every programming language has a different implementation strategy for example; a C data structure is implemented using structures while a C++ data structure is implemented using objects and classes.
+<br>
+<br>
+For example, a List is an abstract data type that is implemented using a dynamic array and linked list. A queue is implemented using linked list-based queue, array-based queue, and stack-based queue. A Map is implemented using Tree map, hash map, or hash table.
+<br><br>
+
+<h2>IN SIMPLE WORDS………</h2>
+<br><br>
+ADT stands for Abstract Data Type, and it refers to a high-level description of a data structure that defines its properties, operations, and behavior. In computer science and programming, ADTs are used to specify the interface of a data structure, which can be implemented in any programming language or framework.
+
+<br><br>
+<h3>Example</h3>
+<br><br>
+<h3>An ADT for a list of integers might specify the following operations:</h3>
+<br>
+<ol class="list">
+  <li>Insert a new integer at a particular position in the list.</li>
+  <li>Return True if the list is empty.</li>
+  <li>Reinitialize the list.</li>
+  <li>Return the number of integers currently in the list</li>
+  <li>Retrieve the integer at a particular position in the list.	</li>
+  <li>Delete the integer at a particular position in the list.</li>
+</ol>
+<br><br>
+From this description, the input and output of each operation should be clear, but the implementation for lists has not been specified.
+<br><br>
+One application that makes use of some ADT might use particular member functions of that ADT more than a second application, or the two applications might have different time requirements for the various operations. These differences in the requirements of applications are the reason why a given ADT might be supported by more than one implementation.	
+<br><br>
+<a><h3 id="topic2">Features of ADT:</h3></a>
+<br><br>
+Abstract data types (ADTs) are a way of encapsulating data and operations on that data into a single unit. Some of the key features of ADTs include:
+<br><br>
+<b>Abstraction:</b> The user does not need to know the implementation of the data structure only essentials are provided.
+<br><br>
+<b>Better Conceptualization:</b> ADT gives us a better conceptualization of the real world.<br><br>
+<b>Robust:</b>The program is robust and has the ability to catch errors.
+<br><br>
+<b>Encapsulation: </b>ADTs hide the internal details of the data and provide a public interface for users to interact with the data. This allows for easier maintenance and modification of the data structure. <br><br>
+<b>Data Abstraction:</b> ADTs provide a level of abstraction from the implementation details of the data. Users only need to know the operations that can be performed on the data, not how those operations are implemented. <br><br>
+<b>Data Structure Independence:</b> ADTs can be implemented using different data structures, such as arrays or linked lists, without affecting the functionality of the ADT. <br><br>
+<b>Information Hiding:</b> ADTs can protect the integrity of the data by allowing access only to authorized users and operations. This helps prevent errors and misuse of the data. <br><br>
+<b>Modularity:</b> ADTs can be combined with other ADTs to form larger, more complex data structures. This allows for greater flexibility and modularity in programming.
+Overall, ADTs provide a powerful tool for organizing and manipulating data in a structured and efficient manner.
+
+<br><br>
+
+<h3 id="topic3">There are mainly three types of ADTs:</h3>
+<br><br>
+<img src="./module/IMAGES/module 2/Picture1.png" alt="">
+<br><br><br>
+<h3 id="topic4">1.List ADT</h3>
+<br><br>
+<img src="./module/IMAGES/module 2/Picture2.png" alt="">
+<br><br>
+<h3>Vies of list</h3>
+<br>
+  The data is generally stored in key sequence in a list which has a head structure consisting of count, pointers and address of compare function needed to compare the data in the list. <br><br>
+  The data node contains the pointer to a data structure and a self-referential pointer which points to the next node in the list.
+  <br><br>
+  <h3>The List ADT Functions is given below:</h3>
+  <br><br>
+ <b> get() – </b>Return an element from the list at any given position.
+ <br><br>
+ <b> insert() –</b> Insert an element at any position of the list.
+ <br><br>
+ <b>remove() – </b>Remove the first occurrence of any element from a non-empty list.
+ <br><br>
+ <b>removeAt() –</b> Remove the element at a specified location from a non-empty list.<br><br>
+ <b> replace() – </b>Replace an element at any position by another element.<br><br>
+ <b> size() – </b>Return the number of elements in the list.<br><br>
+ <b> isEmpty() –</b> Return true if the list is empty, otherwise return false.<br><br>
+ <b> isFull() –</b> Return true if the list is full, otherwise return false.<br><br>
+  <h3 id="topic5">2.Queue ADT</h3><br>
+  
+  <img src="/module/IMAGES/module 2/Picture3.png" alt=""><br><br>
+  The queue abstract data type (ADT) follows the basic design of the stack abstract data type.<br><br>
+  Each node contains a void pointer to the data and the link pointer to the next element in the queue. The program’s responsibility is to allocate memory for storing the data. <br><br>
+<b>  enqueue() – </b> Insert an element at the end of the queue.<br><br>
+<b>  dequeue() – </b> Remove and return the first element of the queue, if the queue is not empty.<br><br>
+<b>  peek() – </b> Return the element of the queue without removing it, if the queue is not empty.<br><br>
+<b>  size() –</b>  Return the number of elements in the queue.<br><br>
+<b>  isEmpty() – </b> Return true if the queue is empty, otherwise return false.<br><br>
+<b>  isFull() –</b>  Return true if the queue is full, otherwise return false.<br><br>
+
+<h3 id="topic6">3.Stack ADT</h3><br><br>
+<img src="/module/IMAGES/module 2/Picture4.png" alt=""><br><br>
+<h3>View of stack</h3><br><br>
+In Stack ADT Implementation instead of data being stored in each node, the pointer to data is stored.<br><br>
+The program allocates memory for the data and address is passed to the stack ADT.<br><br>
+The head node and the data nodes are encapsulated in the ADT. The calling function can only see the pointer to the stack.<br><br>
+The stack head structure also contains a pointer to top and count of number of entries currently in stack.<br><br>
+<b>push() – </b>Insert an element at one end of the stack called top.<br><br>
+<b>pop() – </b>Remove and return the element at the top of the stack, if it is not empty.<br><br>
+<b>peek() –</b> Return the element at the top of the stack without removing it, if the stack is not empty.<br><br>
+<b>size() –</b> Return the number of elements in the stack.<br><br>
+<b>isEmpty() – </b>Return true if the stack is empty, otherwise return false.<br><br>
+<b>isFull() – </b>Return true if the stack is full, otherwise return false.<br><br>
+<h1 id="topic7">Introduction to Stack in Data Structure</h1><br><br>
+
+A stack is a data structure that allows insertion and deletion operation in a LIFO (last-in-first-out) manner. <br><br>The memory operations, therefore, are regulated in a particular manner.<br><br> When an element is added to the stack, it occupies the top position.<br><br> When it comes to removal operation, the most recent element in terms of being inserted into the stack gets first removed, hence the LIFO characteristic. This is similar to a stack of saucers or tiles, kept one over another. We keep going on placing saucers on over another, and while removing, the most recently added one is removed first.
+<br><br>
+<h3>Features of Stack</h3>
+<br>
+<h4>Some of the features are as follows:</h4>
+<br><br>
+<li>
+
+It is essentially based on LIFO (Last-In-First-Out) feature or FILO (First-In-Last-Out) feature.
+</li><br> <li>
+
+When a stack is full, it is called to be in Overflow state, and when it is empty, it is called to be in Underflow state.
+</li><br>
+<li>
+
+
+A stack is an ordered list of elements of a similar type. E.g. stack storing numbers or stack of strings.
+</li><br>
+</p>
+
+<br><br>
+<h2 id="topic8">Standard Stack Operations</h2>
+<br>
+<h3>The following are some common operations implemented on the stack:</h3>
+<br><br>
+<li><b>push(): </b> When we insert an element in a stack then the operation is known as a push. If the stack   is full then the overflow condition occurs.</li>
+</li><br>
+
+<li><b>pop(): </b>When we delete an element from the stack, the operation is known as a pop. If the stack is empty means that no element exists in the stack, this state is known as an underflow state.
+</li><br>
+
+<li><b> isEmpty():</b> It determines whether the stack is empty or not.
+</li><br>
+
+<li><b> isFull(): </b>It determines whether the stack is full or not.'
+</li>
+<br>
+<li><b>peek(): </b>It returns the element at the given position.
+</li><br>
+
+<li><b> count():</b> It returns the total number of elements available in a stack.
+</li><br>
+
+<li> <b> change():</b> It changes the element at the given position.
+</li>
+<br>
+<li> <b>display():</b> It prints all the elements available in the stack.
+</li>
+<br><br>
+<h3 > 1. Insertion Operation(push)</h3>
+<br><br>
+<p>
+The operation to insert an element in a data structure is called Push operation. When we insert an element into a stack, it occupies the bottom-most position, as an object pushed into a pit. The next element inserted goes over the top of the previous element, and likewise, the insertion of all elements happens. As each time, the insertion operation resembles pushing an element into the stack, and the operation is termed as “posh operation”. We will understand the working of push operations through the following steps.
+</p>
+<br><br>
+<h3>PUSH operation</h3>
+
+<br>
+<h4>The steps involved in the PUSH operation is given below:</h4>
+<br>
+<li>Before inserting an element in a stack, we check whether the stack is full.</li>
+<br>
+<li>	If we try to insert the element in a stack, and the stack is full, then the overflow condition occurs.</li><br>
+<li>When we initialize a stack, we set the value of top as -1 to check that the stack is empty.</li><br>
+<li>	When the new element is pushed in a stack, first, the value of the top gets incremented, i.e., top=top+1, and the element will be placed at the new position of the top.</li><br>
+<li>The elements will be inserted until we reach the max size of the stack.</li><br>
+<br>
+<img src="/module/IMAGES/module 2/Picturepush.png" alt="">
+<br><br>
+<h3>POP operation</h3><br>
+<h4>The steps involved in the POP operation is given below:</h4><br>
+<li> Before deleting the element from the stack, we check whether the stack is empty.</li><br>
+<li> If we try to delete the element from the empty stack, then the underflow condition occurs.</li><br>
+<li> If the stack is not empty, we first access the element which is pointed by the top</li><br>
+<li> Once the pop operation is performed, the top is decremented by 1, i.e., top=top-1 </li><br>
+<br> 
+<img src="/module/IMAGES/module 2/Picturepop.png" alt="">
+<br><br>
+<h3 id="topic9">Array Representation of Stack</h3><br>
+<p>
+This is the general representation of Stack. <br>
+We initialize an empty array of size n in which we perform PUSH and POP operations.
+The array Stack contains the element from starting index up to the top pointer which represents the last element of the stack.
+
+</p>
+<br><br>
+<img src="/module/IMAGES/module 2/Picturestack.png" alt="">
+<br><br><h3>Stack using Array</h3>
+<p>
+When the topPointer = -1, it means the stack is empty and when the topPointer = n it means the stack is full. <br>It can be very helpful to check overflow and underflow condition.
+Here is the pseudo code for Stack using array arr of size n.
+<pre class="code">check_Overflow
+  if(top==n)
+      return True
+  else
+      return False
+
+check_UnderFlow
+  if(top==-1)
+    return True
+  else
+      return False
+
+PUSH_OPERATION(data)
+  if(check Overflow)
+      print("Stack Over flow, No more space left")
+      return
+  else
+      top = top+1
+      arr[top] = data
+
+POP_OPERATION
+  if(check Underflow)
+      print("Stack Underflow, No more elements left")
+      return
+  else
+      top = top-1
+      return arr[top+1]
+</pre>
+<p>
+ <b> This is the pseudo code to create stack using an array. You can create a class in any language and implement these methods. <br>
+It is necessary to implement methods to check overflow and underflow condition because it is a common error.
+Program using c lang..</b> <br>
+<pre class="code">#include <stdio.h>
+
+#define SIZE 10
+
+int S[SIZE+1];
+int top = 0;
+
+int is_empty() {
+if(top == 0)
+return 1;
+return 0;
+}
+
+void push(int x) {
+top = top+1;
+if(top > SIZE) {
+printf("Stack Overflow\n");
+}
+else {
+S[top] = x;
+}
+}
+
+int pop() {
+if(is_empty()) {
+printf("Stack Underflow\n");
+return -1000;
+}
+else {
+top = top-1;
+return S[top+1];
+}
+}
+
+int main() {
+pop();
+push(10);
+push(20);
+push(30);
+push(40);
+push(50);
+push(60);
+push(70);
+push(80);
+push(90);
+push(100);
+push(110);
+
+int i;
+for(i=1; i<=SIZE; i++) {
+printf("%d\n",S[i]);
+}
+return 0;
+}
+</pre>
+
+</p>
+
+
+</p>
+<br><br>
+<h3 id="topic10">Linked List Representation of Stack</h3><br>
+<p>
+Before moving to this part you must know about linked list and the difference between array and linked list. </p> <br><br>
+<li>	Linked List Complete Guide. </li><br>
+<p>A linked list has some advantages and disadvantages over an array which make it more suitable for some specific tasks. <br>
+They have dynamic length, it means there is no limit on the number of elements we can add. It is convenient to use a linked list in place of an array when the number of elements is unknown.
+</p>
+<br><br> <img src="/module/IMAGES/module 2/Picturestack1.png" alt="">
+<br><br>
+<p>PUSH and POP operations in the linked list take O(1) constant time because a pointer is at the end of the linked list which manage insertion and deletion. <br>
+
+We only need to check the underflow condition here. If top pointer refers to null then the Stack is already empty
+</p><br>
+<b>Program using  c lang…..</b><br>
+
+<pre class="code">
+#include <stdio.h>
+  #include <stdlib.h>
+  
+  typedef struct node {
+  int data;
+  struct node *next;
+  }node;
+  
+  typedef struct linked_list {
+  struct node *head;
+  struct node *top;
+  }stack;
+  
+  //to make new node
+  node* new_node(int data) {
+  node *z;
+  z = malloc(sizeof(struct node));
+  z->data = data;
+  z->next = NULL;
+  
+  return z;
+  }
+  
+  //to make a new stack
+  stack* new_stack() {
+  stack *s = malloc(sizeof(stack));
+  s->head = NULL;
+  s->top = NULL;
+  
+  return s;
+  }
+  
+  void traversal(stack *s) {
+  node *temp = s->head; //temporary pointer to point to head
+  
+  while(temp != NULL) { //iterating over stack
+    printf("%d\t", temp->data);
+    temp = temp->next;
+  }
+  
+  printf("\n");
+  }
+  
+  int is_empty(stack *s) {
+  if(s->top == NULL)
+    return 1;
+  return 0;
+  }
+  
+  void push(stack *s, node *n) {
+  if(is_empty(s)) { //empty
+    s->head = n;
+    s->top = n;
+  }
+  else {
+    s->top->next = n;
+    s->top = n;
+  }
+  }
+  
+  //function to delete
+  int pop(stack *s) {
+  if(is_empty(s)) {
+    printf("Stack Underflow\n");
+    return -1000;
+  }
+  else {
+    int x = s->top->data;
+    if(s->top == s->head) {// only one node
+      free(s->top);
+      s->top = NULL;
+      s->head = NULL;
+    }
+    else {
+      node *temp = s->head;
+      while(temp->next != s->top) // iterating to the last element
+        temp = temp->next;
+      temp->next = NULL;
+      free(s->top);
+      s->top = temp;
+    }
+    return x;
+  }
+  }
+  
+  int main() {
+  stack *s = new_stack();
+  
+  node *a, *b, *c;
+  a = new_node(10);
+  b = new_node(20);
+  c = new_node(30);
+  
+  pop(s);
+  push(s, a);
+  push(s, b);
+  push(s, c);
+  
+  traversal(s);
+  pop(s);
+  traversal(s);
+  
+  
+  return 0;
+  }
+  
+</pre>
+<br><br>
+<h2 id="topic11">Recursion in data structures</h2>
+<br><br>
+
+<li>Recursion is one of the most powerful tools in a programming language, but one of the most threatening topics-as most of the beginners and not surprising to even experienced students feel</li><br>
+<li>When function is called within the same function, it is known as recursion in C. The function which calls the same function, is known as recursive function.</li><br>
+<li>Recursion is defined as defining anything in terms of itself. Recursion is used to solve problems involving iterations, in reverse order</li>
+<br><br><h2>Types of Recursion</h2><br>
+<h3>There are two types of Recursion</h3>
+<br>
+<li>Direct recursion </li>
+<li> Indirect recursion</li>
+<li> Tailed recursion</li>
+<li>Non- tailed recursion</li> 
+<br><br><h3>Direct Recursion</h3>
+<br>
+<p>When in the body of a method there is a call to the same method, we say that the method is directly recursive</p>
+<br>
+<h3>There are three types of Direct Recursion</h3>
+<br>
+<li>Linear Recursion </li>
+<li>Binary Recursion </li>
+<li>Multiple Recursion </li>
+<br><br>
+<pre class="code">//C program for GCD using recursion
+#include int 
+Find_GCD(int, int);
+
+void main() 
+{
+int n1, n2, gcd;
+scanf(“%d %d”,&n1, &n2);
+gcd = Find_GCD(n1, &n2);
+printf(“GCD of %d and %d is %d”, n1, n2, gcd); 
+}
+int Find_GCD(int m, int n)
+{
+int gcdVal;
+if(n>m)
+{
+ gcdVal = Find_GCD(n,m);
+}
+else if(n==0)
+{ 
+ gcdVal = m;
+}
+else
+{
+ gcdVal = Find_GCD(n, m%n);
+}
+return(gcdVal); 
+}    
+
+</pre><br><br><h3>Direct Recursion in Data Structure</h3>
+<br>
+<p>In the direct recursion, functions call themselves. This kind of operation consists of a single-stage recursive call by the function from within itself. Why don’t we investigate precisely how to carry out direct recursion to determine the square root of a number.</p>
+<pre class="code">
+  {
+    // base case
+      if (x == 0)
+      {
+        return x; 
+      }
+    // recursive case
+    else 
+     {
+        return square(x-1) + (2*x) – 1;
+     }
+  }
+  int main() {
+    // execution of square function
+    int input=3;
+    cout << input<<“^4 = “<<square(input);>
+    return 0;
+  }
+  The output would be displayed like this:
+  3^4 = 9
+</pre>
+<br><br>
+<h3>Recursion in Data Indirect Structure</h3>
+<br>
+<p>Indirect recursion happens when functions call other functions to call the initial function. This specific course of action consists of 2 simple steps when developing a recursive call, essentially making functions call functions to generate a recursive call. Mutual recursion could be referred to as indirect recursion</p>
+<br><br>
+<p>Let’s examine precisely how to put into action indirect recursion to print or perhaps find out all of the figures from 10 to 20.
+
+</p>
+<pre class="code">using namespace std;
+  int n=10;
+  // declaring functions
+  void foo1(void);
+  void foo2(void);
+  // defining recursive functions
+  void foo1() 
+  { 
+    if (n <= 20) 
+    { 
+      cout<<n<< “;  
+      n++;           
+      foo2();       
+    } 
+    else
+      return; 
+  } 
+  void foo2() 
+  { 
+    if (n <= 20) 
+    { 
+      cout<<n<<” “;  // prints n
+      n++;           // increments n by 1
+      foo1();       // calls foo1()
+    } 
+    else
+      return; 
+  } >
+  The output would be displayed like this:
+  10 11 12 13 14 15 16 17 18 19 20
+  </pre>
+  <br>
+  <h3>Tailed Recursion in Data Structure</h3>
+  <p>A recursive function is referred to as tail-recursive if the recursive call is the end execution executed by the function. Let us try to figure out the definition with the help of one example</p>
+<br>
+<pre class="code">int fun(int z)
+{
+printf(“%d”,z);
+fun(z-1);    
+//Recursive call is last executed statement
+}
+
+</pre>
+<br>
+<h3>Non-Tailed Recursion in Data Structure</h3>
+<br><br>
+<p>A recursive function is said to be non-tail recursive in case the recursion call isn’t the final thing performed by the function. After reverting back, there’s another thing still there to assess. Now, look at the example.
+
+</p>
+<br>
+<pre class="code">int fun(int z)
+  {
+    fun(z-1);
+    printf(“%d”,z);
+    //Recursive call is not the last executed statement
+  }
+  </pre>
+</div>
+
+<center>
+<p id="number">1</p>
+<button class="btn" id="back" onclick="back()">Back</button>
+<button class="btn" id="next" onclick="next()">Next</button>
+</center>
+<br>
+<script>
+backButton = document.getElementById("back");
+nextButton = document.getElementById("next");
+number = document.getElementById("number");
+var i = 1;
+function ready() {
+backButton.disabled = true;
+}
+function next() {
+     i++;
+     if (i == 5) {
+      nextButton.disabled = true;
+       }
+     backButton.disabled = false;
+   number.innerHTML = i;
+   if(i==2){
+    window.location='./Queue/containpage.html';
+   }
+ }
+
+ function back() {
+       i--;
+        if (i == 1) {
+          backButton.disabled = true;
+        }
+         nextButton.disabled = false;
+           number.innerHTML = i;
+     }
+
+</script>
+</body>
+</html>
