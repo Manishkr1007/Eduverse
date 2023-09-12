@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notation</title>
+    
+    <link rel="stylesheet" href="./containpagecss.css">
+    <link rel="stylesheet" href="adt.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair:ital,wght@1,300&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!-- nav-bar -->
+    <div>
+     <div class="navbar"> <nav class="sticky_header">
+        <div class="container nav-container flex">
+            <div class="nav-left">
+                <h1 class="logo">Eduverse</h1>
+            </div>
+            <div class="nav-right flex">
+                <ul class="nav-list-container flex">
+                    <li><a class="nav-list" href="../index.html"> HOME</a></li>
+                    <li><a class="nav-list" href="../about.html">ABOUT US</a></li>
+                    <li><a class="nav-list" href="../contact.html">CONTACT US</a></li>
+                </ul>
+                 <div class="search-box flex">
+                    <img src="IMAGES/SEARCH-ICON.png" class="search-icon" alt="">
+                    <input type="text" placeholder="Search">
+                 </div>
+              </div>
+            </div>
+        </nav>
+    </div>
+  
+<div class="sidebar">
+  <a href="#Big-Oh Notation">Big-Oh Notation</a>
+  <a href="#Omega (Ω) notation">Omega (Ω) notation</a>
+  <a href="#Theta Notation">Theta Notation</a>
+  <a href="#Array">Array</a>
+  <a href="#Sorting">Sorting</a>
+  <a href="#Bubble Sort">Bubble Sort</a>
+  <a href="#Selection Sort">Selection Sort</a>
+  <a href="#Insertion Sort">Insertion Sort</a>
+</div>
+<nav>
+  <div class="container nav-container flex">
+      <div class="nav-left">
+          <h1 class="logo">MyProject</h1>
+      </div>
+      <div class="nav-right flex">
+          <ul class="nav-list-container flex">
+              <li><a class="nav-list" href="#"> HOME</a></li>
+              <li><a class="nav-list" href="#">ABOUT US</a></li>
+              <li><a class="nav-list" href="#">CONTACT US</a></li>
+          </ul>
+          <div class="search-box flex">
+              <img src="IMAGES/SEARCH-ICON.png" class="search-icon" alt="">
+              <input type="text" placeholder="Search">
+          </div>
+      </div>
+  </div>
+</nav> 
+<div class="content">
+  <h1 class="header-text">Introduction to Notation</h1>
+  <p>We all understand that as the input size (n) rises, an algorithm's running time grows (or stays constant in the
+    case of constant running time). Even though the input is the same size, running times can change between distinct
+    input instances. We then conduct best, average, and worst-case analyses in that situation. The best-case running
+    time provides the shortest running time, the worst-case running time provides the longest running time, and the
+    average-case running time provides the average running time for the algorithm.</p>
+
+<h2 id="Big-Oh Notation">Big-Oh Notation (O)</h2>
+<p>It provides possibly asymptotically tight upper bound for f(n) and it does not give best case complexity but can
+    give worst case complexity. <br>The Big O notation defines an upper bound of an algorithm, it bounds a function only
+    from above. For example, consider the case of Insertion Sort. It takes linear time in best case and quadratic time
+    in worst case. We can safely say that the time complexity of Insertion sort is O(n2 ). Note that O(n2 ) also covers
+    linear time.
+</p>
+    <div class="figure-image">
+        <figure>
+            <img src="Big Oh Notation.jpg">
+             <figcaption> Graph representation of Big-Oh Notation.</figcaption>
+          </figure>
+   </div>
+<p>
+    The Big O notation is useful when we only have upper bound on time complexity of an algorithm.
+    Many times we easily find an upper bound by simply looking at the algorithm.
+</p>   
+<h2 id="Omega (Ω) notation"> Omega (Ω) notation</h2>
+<p>It provides possibly asymptotically tight lower bound for f(n) and it does not give worst case complexity but can give best case complexity.<br>
+    Just as Big O notation provides an asymptotic upper bound on a function, Ω notation provides an asymptotic lower bound.</p>
+    <div class="figure-image">
+        <figure>
+            <img src="Big Omega Notation.png">
+            <figcaption>Graph representation of Omega Notation</figcaption>
+        </figure>
+    </div>
+<p>Ω notation can be useful when we have lower bound on time complexity of an algorithm. As discussed in the previously, 
+the best-case performance of an algorithm is generally not useful, the omega notation is the least used notation among all 
+three.
+</p>
+
+<h2 id="Theta Notation">Theta Notation</h2>
+<p>The theta notation bounds a functions from above and below, so it defines the exact asymptotic behaviour. 
+    A simple way to get theta notation of an expression is to drop low order terms and ignore leading constants.
+</p>
+    <div class="figure-image">
+        <figure>
+            <img src="Big-Theta-Notation.jpg">
+            <figcaption>Graph representation of Theta Notation</figcaption>
+        </figure>
+<h2 id="Array">ARRAY</h2>
+  <p><span style="font-family: Segoe UI, sans-serif;"><i><span style="color:
+    #ff0000;" line-height="1.2">Definition</span>- An array is a data structure that contains a group of elements. Typically these elements are
+     all of the same data type, such as an integer or string. Arrays are commonly used in computer programs to organize data so 
+     that a related set of values can be easily sorted or searched.</i></span></span></p>
+     <p>All arrays consist of contiguous memory locations. The lowest address corresponds to the first element and the highest
+     address to the last element.
+    </p>
+  
+    <div class="row">
+        <div class="column">Number (0)</div>
+        <div class="column">Number (1)</div>
+        <div class="column">Number (2)</div>
+        <div class="column">--</div>
+        <div class="column">--</div>
+        <div class="column">Number (n)</div>
+    </div>
+    <br>
+    <div class="bullet-list">
+        <ul>
+            <br>
+            <li>One Dimensional Array</li>
+            <br>
+            <li>Two Dimensional Array</li>
+            <br>
+            <li>Multi-Dimensional Array</li>
+            <br>
+        </ul>
+    </div>    
+
+<h2>Representation of One Dimensional Array</h2>
+<p><span style="font-size: 16px;">Representation:</span></p>
+<p>In Pascal language we can define array as<br>
+VAR X: array [ 1 … N] of integer {or any other type}</p>
+<p>That’s means the structure contains a set of data elements, numbered (N), for example called (X), its defined as type
+    of element, the second type is the index type, is the type of values used to access individual element of the array,
+    the value of index is</p>
+    <p align="center" style="text-align: center;"><span style="font-size: 14pt; line-height: 107%;">1&lt= I =&ltN</span></p>
+    <p>By this definition the compiler limits
+    the storage region to storing set of element, and the first location is individual element of array , and this 
+    called the Base Address, let’s be as 500. Base Address (501) and like for the all elements and used the index I, by 
+    its value are range 1&lt= I =&lt N according to Base Index (500), by using this relation:</p>
+<p align="center" style="text-align:center;">Location ( X[I] ) = Base Address + (I-1)<br>
+    When the requirement to bounding the forth element (I=4):<br>
+    Location ( X[4] ) = 500 + (4-1)<br>
+    = 500 +3<br>
+    = 503<br>
+    </p>
+<p>So the address of forth element is 503 because the first element in 500.<br>
+     When the program indicate or dealing with element of array in any instruction like (write (X [I]), read (X [I] ) ), 
+     the compiler depend on going relation to bounding the requirement address.
+ </p>
+<br>
+ <h2>Multidimensional Arrays</h2>
+ <br>
+ <p>
+    An array of arrays is called a multi-dimensional array. In simple words, an array created with more than one dimension
+     (size) is called a multi-dimensional array. The multi-dimensional array can be of a two-dimensional array or 
+     three-dimensional array or four-dimensional array or more.
+ </p>
+ <div class="definition">
+    <p>
+        <span class="highlight">Dimensional Array :- </span> The simplest form of the multidimensional array is the two-dimensional array. A two 
+        dimensional array is, in essence, a list of one-dimensional arrays. To declare a two-dimensional integer array
+         of size x, y you would write something as follows:
+    </p>
+ </div>
+ <div class="single-row">
+    <div class="column">type arrayName [ x ][ y ];</div>
+ </div>
+ <p>
+    Where type can be any valid C data type and arrayName will be a valid C identifier. A two dimensional array can be
+     think as a table which will have x number of rows and y number of columns. A 2-dimensional array a, which contains 
+     three rows and four columns can be shown as below:
+ </p>
+ <table class="my-table">
+    <tr>
+      <th>Column 0</th>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+    </tr>
+    <tr>
+      <td>a[0][0]</td>
+      <td>a[0][1]</td>
+      <td>a[0][2]</td>
+      <td>a[0][3] </td>
+    </tr>
+    <tr>
+      <td>a[1][0]</td>
+      <td>a[1][1]</td>
+      <td>a[1][2]</td>
+      <td>a[1][3]</td>
+    </tr>
+    <tr>
+      <td>a[2][0]</td>
+      <td>a[2][1]</td>
+      <td>a[2][2]</td>
+      <td>a[2][3]</td>
+    </tr>
+  </table>
+<p>
+    Thus, every element in array a is identified by an element name of the form a[ i ][ j ], where a is the name of the 
+    array, and i and j are the subscripts that uniquely identify each element in a.
+</p>
+
+<h3>Representation of two-dimensional arrays in memory</h3>
+<p>
+    A two dimensional ‘m x n’ Array A is the collection of m X n elements. Programming language stores the two dimensional array in one dimensional memory in either of two ways-
+</p>
+<div class="bullet-list">
+    <ul>
+        <li>Row Major Order: First row of the array occupies the first set of memory locations reserved for the array; Second row occupies the next set, and so forth.</li>
+    </ul>
+</div>
+<div class="figure-image">
+  <figure>
+      <img src="line image2.png">
+      <!-- <figcaption>Graph representation of Omega Notation</figcaption> -->
+  </figure>
+</div>
+<!-- yahan line wla image lagana hai -->
+<p>
+    To determine element address A[i, j]:
+</p>
+<p>
+    Location ( A[ i,j ] ) =Base Address + ( N x ( I - 1 ) ) + ( j - 1 ) 
+</p>
+<p>
+    For example: 
+</p>
+<p>
+    Given an array [1…5,1…7] of integers. Calculate address of element T[4,6], where BA=900. 
+</p>
+<blockquote style="border: none; margin: 0 0 0 40px; padding: 0px;"><p style="text-align: left;">Sol) I = 4 , J = 6<br>
+    M= 5 , N= 7<br>
+    Location (T [4,6]) = BA + (7 x (4-1)) + (6-1)<br>
+    = 900+ (7 x 3) +5<br>
+    = 900+ 21+5 <br>
+   = 926<br></p></blockquote>
+   <h2>Representation of Three and Four Dimensional Array</h2>
+   <p>By the same way we can determine address of element for three and four dimensional array:</p>
+<h3>Three Dimensional Array</h3>
+<p class="indent1">To calculate address of element X[ i,j,k] using row-major order :</p>
+<p class="indent2"> Location ( X[i,j,k] )=BA + MN (k-1) + N (i-1) + (j-1)</p>
+<p class="indent3">using column-major order</p>
+<p class="indent4">Location ( X[i,j,k] )=BA + MN (k-1) + M (j-1) + (i-1)</p>
+<div class="h4">
+  <h3>Four Dimensional Array</h3>
+</div>
+<p class="indent5">To calculate address of element X[ i,j,k] using row-major order : </p>
+<p class="indent6"> Location ( Y[i,j,k,l] )=BA + MNR (l-1) +MN (k-1) +N (i-1) + (j-1)</p>
+<p class="indent7">using column-major order</p>
+<p class="indent8">Location ( Y[i,j,k,l] )=BA + MNR (l-1) +MN (k-1) +M (j-1) + (i-1)</p>
+
+<div class="h4-para">
+    <p>For Example:</p>
+    <p>Given an array [ 1..8, 1..5, 1..7 ] of integers. Calculate address of element A[5,3,6], by using rows &columns
+      methods, if BA=900?</p>
+    <p>Sol) The dimensions of A are : </p>
+    <p>M=8 , N=5, R=7</p>
+    <p> i=5, j=3, k=6</p>
+    <p>Row Wise</p>
+    <p class="indent9">Location (A[i,j,k]) = BA + MN(k-1) + N(i-1) + (j-1)<br>
+      Location (A[5,3,6]) = 900 + 8x5(6-1) + 5(5-1) + (3-1) <br>
+      = 900 + 40 x 5 +5 x 4 + 2 <br>
+      = 900 + 200 +20 +2<br>
+      =1122<br>
+    </p>
+    <p>Column-wise</p>
+    <p class="indent9">Location (A[i,j,k]) = BA + MN(k-1) + M(j-1) + (i-1)<br>
+      Location (A[5,3,6]) = 900 + 8x5(6-1) + 8(3-1) + (5-1)<br>
+      = 900 + 40 x 5 +8 x 2 + 4<br>
+      = 900 + 200 +16 +4<br>
+    </p>
+  </div>
+  <h2 id="Sorting">SORTING</h1>
+  <p><span class="highlight"> Definition:-</span> Sorting is the process of arranging a collection of data in a specific order. In computer science, 
+    sorting is a fundamental topic in data structures and algorithms (DSA). It involves arranging elements of an array
+     or list in ascending or descending order based on a specific comparison criterion.
+ </p>
+ <p>Sorting algorithms are used extensively in various computer applications where data needs to be processed in a specific 
+    order, such as database systems, search engines, and operating systems. There are many different sorting algorithms
+     available, each with its advantages and disadvantages in terms of time and space complexity.</p> 
+<p>Some of the commonly used sorting algorithms are:</p>
+<div class="bullet-list">
+    <ul>
+        <li>Bubble Sort</li>
+        <li>Selection Sort</li> 
+        <li>Insertion Sort</li>
+        <li>Merge Sort</li>  
+        <li>Quick Sort</li>
+        <li>Counting Sort</li>
+    </ul>
+</div>
+<p>These sorting algorithms have different time and space complexities and are used in different scenarios based on the size
+    of the data, the stability of the sort, and other factors.
+</p>
+<h2 id="Bubble Sort">Bubble Sort</h2>
+<p>
+    Bubble sort is a simple sorting algorithm that works by repeatedly swapping adjacent elements if they are in the wrong
+     order. The algorithm iterates over the list multiple times, with each pass comparing adjacent elements and swapping them 
+     if they are in the wrong order. The iterations continue until the list is fully sorted.
+</p>
+<p>Here's how the bubble sort algorithm works:</p>
+<div class="Number-Point">
+    <ol>
+        <li>Starting from the first element, compare the current element with the next element in the list.</li>
+        <li>If the current element is greater than the next element, swap the two elements.</li>
+        <li>Move to the next pair of elements and repeat step 2.</li>
+        <li>Continue iterating over the list and swapping adjacent elements until no more swaps are needed.</li>
+    </ol>
+</div>
+<img src="Bubble Sort.jpg" alt="Bubble Sorting Image" class="image-style">
+<p>
+    After each iteration, the largest element in the unsorted portion of the list will "bubble up" to the top,
+     and the next iteration will only need to compare and swap the remaining unsorted elements.
+</p>
+<pre class="code">
+    #include &lt;stdio.h&gt;
+    void bubbleSort(int arr[], int n) {
+        int i, j, temp;
+        for (i = 0; i < n-1; i++) {
+            for (j = 0; j < n-i-1; j++) {
+                if (arr[j] > arr[j+1]) {
+                // swap adjacent elements
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+    }
+        
+    int main() {
+        int arr[] = {64, 25, 12, 22, 11};
+        int n = sizeof(arr) / sizeof(arr[0]);
+        bubbleSort(arr, n);
+        printf("Sorted array: ");
+        for (int i = 0; i < n; i++) {
+            printf("%d ", arr[i]);
+        }
+    printf("\n");
+    return 0;
+    }
+</pre>
+
+<!-- YAHAN OUTPUT LAGEGA -->
+<div class="output-container">
+    <div>Sorted array:</div>
+    <div>11</div>
+    <div>12</div>
+    <div >22</div>
+    <div>25</div>
+    <div>64</div>
+</div>
+
+<h2 id="Selection Sort">Selection Sort</h2>
+<p>
+    <span class="highlight"> Definition:-</span>   Selection sort is another sorting algorithm used in computer science.
+     It works by selecting the smallest element from an unsorted list and swapping it with the first element in the list. 
+     Then, the algorithm selects the second smallest element and swaps it with the second element in the list, and so on, 
+     until the entire list is sorted.
+</p>
+<p>The algorithm divides the input list into two parts: the sorted part and the unsorted part. Initially, the sorted part is 
+    empty, and the unsorted part is the entire list. In each iteration, the algorithm finds the smallest element in the
+     unsorted part and swaps it with the first element in the unsorted part. This moves the smallest element to the sorted
+      part of the list. The process is repeated until the entire list is sorted.</p>
+<p>Selection sort has a time complexity of O(n^2), where n is the number of elements in the list. It is not very efficient
+     for large datasets, but it has the advantage of being easy to implement and understand.</p>
+<p>The merge sort algorithm can be described as follows: </p>
+<div class="Number-Point">
+    <ol>
+        <li>Find the smallest element in the unsorted part of the list.</li>
+        <li>Swap the smallest element with the first element in the unsorted part of the list.</li>
+        <li>Move the boundary between the sorted and unsorted parts one element to the right.</li>
+        <li>Repeat steps 1-3 until the entire list is sorted.</li>
+    </ol>
+</div>
+<img src="Selection Sort.jpg" alt="Selection Sort Image" class="image-style">
+<p>The above steps are repeated n-1 times, where n is the number of elements in the list. At each iteration, the algorithm 
+    finds the smallest element in the remaining unsorted part of the list and swaps it with the appropriate element in the 
+    sorted part.
+</p>
+
+<pre class="code">
+    #include &lt;stdio.h&gt;
+    void selectionSort(int arr[], int n) {
+        int i, j, minIndex, temp;
+        for (i = 0; i < n-1; i++) {
+            minIndex = i;
+            for (j = i+1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            // swap smallest element with first element in unsorted part
+            temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
+        }
+    }
+        
+    int main() {
+        int arr[] = {64, 25, 12, 22, 11};
+        int n = sizeof(arr) / sizeof(arr[0]);
+        selectionSort(arr, n);
+        printf("Sorted array: ");
+        for (int i = 0; i < n; i++) {
+            printf("%d ", arr[i]);
+        }
+        printf("\n");
+        return 0;
+    }
+</pre>
+
+<!-- yahan output lagega -->
+<div class="all-output">
+</div>
+<div class="output-container">
+    <div>Sorted array:</div>
+    <div>11</div>
+    <div>12</div>
+    <div >22</div>
+    <div>25</div>
+    <div>64</div>
+</div>
+<!-- Insertion Sort Starts here -->
+<h2 id="Insertion Sort">Insertion Sort</h2>
+
+<p>
+    <span class="highlight"> Definition:-</span>Insertion sort is a simple sorting algorithm that works by building a sorted 
+    list one item at a time. It is similar to the way people sort a deck of cards, where cards are taken from an unsorted pile
+    and placed in the correct position in the sorted pile.
+</p>
+<p>
+    In insertion sort, the first element of the input array is considered to be already sorted. The algorithm then iterates
+     through the remaining elements, one by one, and inserts each element into the correct position in the sorted list. 
+     The process is repeated until the entire array is sorted.
+</p>
+<p>
+    To insert an element into the correct position, the algorithm compares it to the elements in the sorted part of the array 
+    and shifts larger elements to the right until the correct position for the new element is found. The shifting process is 
+    done by repeatedly swapping adjacent elements until the new element is in its correct position.
+</p>
+<p>
+    Insertion sort has a time complexity of O(n^2), where n is the number of elements in the array. It is efficient for 
+    small datasets and has the advantage of being stable, meaning that it preserves the order of equal elements in the array.
+</p>
+<p>
+    Here's an example of how insertion sort works:
+</p>
+<div class="Number-Point">
+    <ol>
+        <li>Assume the first element of the array is already sorted.</li>
+        <li>Iterate through the remaining elements of the array.</li>
+        <li>For each element, compare it to the elements in the sorted part of the array and shift larger elements to the right.</li>
+        <li>Insert the new element into the correct position in the sorted list.</li>
+        <li>Repeat steps 2-4 until the entire array is sorted.</li>
+    </ol>
+</div>
+<p>The above steps are repeated n-1 times, where n is the number of elements in the array. At each iteration, the algorithm
+     inserts the next element into the correct position in the sorted list.
+</p>
+<img src="Insertion Sort.jpg" alt="Insertion sort" class="image-style">
+
+
+<pre class="code">
+    #include &lt;stdio.h&gt;
+    void insertionSort(int arr[], int n) {
+        int i, j, key;
+        for (i = 1; i < n; i++) {
+            key = arr[i];
+            j = i - 1;
+        
+            // shift larger elements to the right
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+            arr[j + 1] = key;
+        }
+    }
+        
+    int main() {
+        int arr[] = { 12, 11, 13, 5, 6 };
+        int n = sizeof(arr) / sizeof(arr[0]);
+        insertionSort(arr, n);
+        printf("Sorted array: ");
+        for (int i = 0; i < n; i++) {
+            printf("%d ", arr[i]);
+        }
+        printf("\n");
+        return 0;
+    }
+</pre>
+<div class="all-output">
+</div>
+<div class="output-container">
+    <div>Sorted array:</div>
+    <div>5</div>
+    <div>6</div>
+    <div >11</div>
+    <div>12</div>
+    <div>13</div>
+</div>
+
+<h2 id="Merge Sort">Merge Sort</h2>
+<p>
+    <span class="highlight"> Definition:-</span>Merge sort is a divide-and-conquer sorting algorithm that works by dividing
+     the input array into smaller subarrays, sorting each subarray recursively, and then merging the sorted subarrays back 
+     together to obtain the final sorted array..
+</p>
+<p>
+    The merge sort algorithm can be described as follows:
+</p>
+<div class="Number-Point">
+    <ol>
+        <li>Divide the input array into two halves.</li>
+        <li>Sort each half recursively by applying the merge sort algorithm to each half.</li>
+        <li>Merge the two sorted halves back together to obtain the final sorted array.</li>
+    </ol>
+</div>
+<p>
+    The merge operation is the most important part of the algorithm. It combines two sorted subarrays into a single sorted 
+    array. The merge operation works by comparing the first elements of the two subarrays and selecting the smaller one to
+     be placed in the new merged array. The selected element is then removed from its original subarray and the process is
+      repeated until one of the subarrays is empty. Then, the remaining elements of the other subarray are simply appended
+       to the end of the merged array.
+</p>
+<p>
+    Merge sort has a time complexity of O(n log n) in the worst case, where n is the number of elements in the input array. 
+    It is an efficient algorithm for sorting large datasets and is also stable, meaning that it preserves the order of equal
+     elements in the array.
+</p>
+<img src="Merge Sort.jpg" alt="Merge sort" class="image-style">
+<p>The above example demonstrates the basic steps of the merge sort algorithm. The input array is divided into two halves,
+     each half is recursively sorted using the merge sort algorithm, and the two sorted halves are merged back together to
+      obtain the final sorted array.
+</p>
+<pre class="code">
+    #include &lt;stdio.h&gt;
+                    void merge(int arr[], int left[], int leftSize, int right[], int rightSize) {
+                        int i = 0, j = 0, k = 0;
+                        while (i < leftSize && j < rightSize) {
+                            if (left[i] <= right[j]) {
+                                arr[k++] = left[i++];
+                            } else {
+                                arr[k++] = right[j++];
+                            }
+                        }
+                        while (i < leftSize) {
+                            arr[k++] = left[i++];
+                        }
+                        while (j < rightSize) {
+                            arr[k++] = right[j++];
+                        }
+                    }
+                    
+                    void mergeSort(int arr[], int n) {
+                        if (n < 2) {
+                            return;
+                    }
+                    int mid = n / 2;
+                        int left[mid], right[n - mid];
+                        for (int i = 0; i < mid; i++) {
+                            left[i] = arr[i];
+                        }
+                        for (int i = mid; i < n; i++) {
+                            right[i - mid] = arr[i];
+                        }
+                        mergeSort(left, mid);
+                        mergeSort(right, n - mid);
+                        merge(arr, left, mid, right, n - mid);
+                    }
+                    
+                    int main() {
+                        int arr[] = { 12, 11, 13, 5, 6, 7 };
+                        int n = sizeof(arr) / sizeof(arr[0]);
+                        mergeSort(arr, n);
+                        printf("Sorted array: ");
+                        for (int i = 0; i < n; i++) {
+                            printf("%d ", arr[i]);
+                        }
+                        printf("\n");
+                        return 0;
+                    }
+</pre>
+<div class="all-output">
+    </div>
+    <div class="output-container">
+        <div>Sorted array:</div>
+        <div>7</div>
+        <div>11</div>
+        <div >15</div>
+        <div>18</div>
+        <div>52</div>
+        <div>68</div>
+    </div>
+    
+
+<center>
+<p id="number">1</p>
+<button class="btn" id="back" onclick="back()">Back</button>
+<button class="btn" id="next" onclick="next()">Next</button>
+</center>
+<br>
+<script>
+backButton = document.getElementById("back");
+nextButton = document.getElementById("next");
+number = document.getElementById("number");
+var i = 1;
+function ready() {
+backButton.disabled = true;
+}
+function next() {
+     i++;
+     if (i == 5) {
+      nextButton.disabled = true;
+       }
+     backButton.disabled = false;
+   number.innerHTML = i;
+   if(i==2){
+    window.location='#';
+   }
+ }
+
+ function back() {
+       i--;
+        if (i == 1) {
+          backButton.disabled = true;
+        }
+         nextButton.disabled = false;
+           number.innerHTML = i;
+     }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniproject</title>
+    
+    <link rel="stylesheet" href="./containpagecss.css">
+    <link rel="stylesheet" href="adt.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair:ital,wght@1,300&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!-- nav-bar -->
+    <div>
+    <div class="navbar"> <nav class="sticky_header">
+        <div class="container nav-container flex">
+            <div class="nav-left">
+                <h1 class="logo">Eduverse</h1>
+            </div>
+            <div class="nav-right flex">
+                <ul class="nav-list-container flex">
+                    <li><a class="nav-list" href="../index.html"> HOME</a></li>
+                    <li><a class="nav-list" href="../about.html">ABOUT US</a></li>
+                    <li><a class="nav-list" href="../contact.html">CONTACT US</a></li>
+                </ul>
+                <div class="search-box flex">
+                    <img src="IMAGES/SEARCH-ICON.png" class="search-icon" alt="">
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+  
+<div class="sidebar">
+  <a href="#queue">queue</a>
+  <a href="#fifo">principle of queue</a>
+  <a href="try.html">Representation of queue</a>
+  <a href="#about">Insertion in queue</a>
+  <a href="#news">Deletion in queue</a>
+  <a href="#contact">Circular queue</a>
+  <a href="#about">Dequeue</a>
+  <a href="try.html">Priority queue</a>
+ 
+</div>
+<nav>
+  <div class="container nav-container flex">
+      <div class="nav-left">
+          <h1 class="logo">MyProject</h1>
+      </div>
+      <div class="nav-right flex">
+          <ul class="nav-list-container flex">
+              <li><a class="nav-list" href="#"> HOME</a></li>
+              <li><a class="nav-list" href="#">ABOUT US</a></li>
+              <li><a class="nav-list" href="#">CONTACT US</a></li>
+          </ul>
+          <div class="search-box flex">
+              <img src="IMAGES/SEARCH-ICON.png" class="search-icon" alt="">
+              <input type="text" placeholder="Search">
+          </div>
+      </div>
+  </div>
+</nav> 
+<div class="content">
+  <h1 id="queue" class="header-text">Queue</h1>
+<p>
+  A queue is a linear data structure in computer science that represents a collection of elements arranged in a specific order. It operates on the principle of "first in, first out" (FIFO), meaning that the element that is inserted first will be the first one to be removed. Queues are commonly used in computer algorithms for tasks such as scheduling, buffering, and handling requests. In a queue, elements are added at one end, known as the rear, and removed from the other end, known as the front. This order is maintained until all the elements are removed from the queue
+<br><br>
+For example,  Imagine a bank with a single teller counter where multiple customers are waiting in line. When a new customer arrives, they join the end of the line and wait for their turn. The first customer in line is served by the teller, and when they finish, they leave the counter and the next customer in the line steps forward to be served. This process continues until all customers have been served.
+    
+In this scenario, the queue represents the waiting line of customers, and the teller serves the customers in the order they arrived, following the First-In-First-Out (FIFO) principle. The customers are added to the end of the queue and removed from the front of the queue when they are served.
+<br><br>
+<img src="Queue-Data-Structures.png" alt=" link-list">
+
+<h2 id="fifo">FIFO Principle of Queue:</h2>
+<br><br>
+A Queue is like a line waiting to purchase tickets, where the first person in line is the first person served. (i.e. First come first serve).Position of the entry in a queue ready to be served, that is, the first entry that will be removed from the queue, is called the front of the queue(sometimes, head of the queue), similarly, the position of the last entry in the queue, that is, the one most recently added, is called the rear (or the tail) of the queue. See the below figure.
+<br><br>
+<img src="Screenshot 2023-07-10 214828.png" alt=" link-list">
+<br><br>
+<h3>characteristics of a queue are as follows:</h3>
+<br><br>
+1.	First-in-First-out (FIFO) order: Queues operate based on the FIFO principle, which means that the first item to enter the queue is the first one to be processed and removed from the queue.
+<br><br>
+2.	Enqueue and Dequeue: Elements are added to a queue using the enqueue operation, while elements are removed from the front of the queue using the dequeue operation.<br><br>
+3.	Size: Queues have a maximum size, which can be either fixed or dynamic. If a queue reaches its maximum size and a new item needs to be added, the oldest item in the queue must be removed to make space for the new item.<br><br>
+4.	Waiting time: In a queue, items that arrive later have to wait in the queue until all the items ahead of them have been processed and removed from the queue.<br><br>
+5.	Single-ended: Queues are single-ended data structures, which means that they can only be accessed from one end (the front). This ensures that the order in which items are processed is preserved.<br><br>
+6.	Synchronization: Queues can be used for synchronization between threads or processes. In a multi-threaded or multi-process application, a queue can be used to ensure that tasks are executed in the correct order and that resources are us<br><br>
+<img src="Screenshot 2023-07-10 204046.png" alt=" link-list"><br><br>
+
+<h3>Representation of queue:</h3>
+<br><br>
+1. In computer science, a queue is an abstract data type that represents a collection of elements in which elements are added at one end and removed from the other end. The order in which elements are removed is called First-In-First-Out (FIFO), meaning the element that was added first is the one that is removed first.<br><br>
+2.In programming, a queue can be represented using various data structures, such as arrays, linked lists, and stacks. Here are two commonly used representations of a queue:<br><br>
+3.Array implementation: In this implementation, a queue is represented as an array with two pointers, one pointing to the front (the first element in the queue), and the other pointing to the rear (the last element in the queue). To enqueue (add) an element, you insert it at the rear end of the queue, and to dequeue (remove) an element, you remove the element from the front end of the queue. As elements are added and removed, the front and rear pointers are updated accordingly.
+<br><br>
+<pre class="code">
+    #include <stdio.h>
+
+        #define MAX_SIZE 100
+        
+        typedef struct {
+            int data[MAX_SIZE];
+            int front;
+            int rear;
+        } Queue;
+        
+        void initializeQueue(Queue* queue) {
+            queue->front = -1;
+            queue->rear = -1;
+        }
+        
+        int isQueueEmpty(Queue* queue) {
+            return (queue->front == -1 && queue->rear == -1);
+        }
+        
+        int isQueueFull(Queue* queue) {
+            return (queue->rear + 1) % MAX_SIZE == queue->front;
+        }
+        
+        void enqueue(Queue* queue, int value) {
+            if (isQueueFull(queue)) {
+                printf("Queue is full. Unable to enqueue.\n");
+                return;
+            }
+            if (isQueueEmpty(queue)) {
+                queue->front = 0;
+                queue->rear = 0;
+            } else {
+                queue->rear = (queue->rear + 1) % MAX_SIZE;
+            }
+            queue->data[queue->rear] = value;
+        }
+        
+        int dequeue(Queue* queue) {
+            if (isQueueEmpty(queue)) {
+                printf("Queue is empty. Unable to dequeue.\n");
+                return -1; // or any other suitable value indicating failure
+            }
+            int value = queue->data[queue->front];
+            if (queue->front == queue->rear) {
+                queue->front = -1;
+                queue->rear = -1;
+            } else {
+                queue->front = (queue->front + 1) % MAX_SIZE;
+            }
+            return value;
+        }
+        
+        int main() {
+            Queue queue;
+            initializeQueue(&queue);
+        
+            enqueue(&queue, 10);
+            enqueue(&queue, 20);
+            enqueue(&queue, 30);
+        
+            printf("Dequeued: %d\n", dequeue(&queue));
+            printf("Dequeued: %d\n", dequeue(&queue));
+            printf("Dequeued: %d\n", dequeue(&queue));
+        
+            return 0;
+        }
+
+
+        <h2>Output</h2>
+        <p>   Dequeued: 10
+        Dequeued: 20
+        Dequeued: 30</p>
+  </pre>
+
+  <h3>Insertion in queue:</h3>
+  <br><br>
+   1: In a queue, insertion is performed at the rear end. The process of adding an element to the queue is called enqueue operation. Here are the steps for insertion in a queue:<br><br>
+   2:  Check if the queue is full. If the queue is full, the insertion cannot be performed, and an overflow error occurs.<br><br>
+   3: If the queue is not full, increment the rear pointer to point to the next available position in the queue.
+   <br><br>
+   4: Add the element to the position pointed by the rear pointer.
+    <br><br>
+   5:  If this is the first element in the queue, set the front pointer to the same position as the rear pointer
+    <br>
+<br>  <img src="Screenshot 2023-07-23 110051.png" alt=" link-list"><br><br>
+<pre class="code">
+
+  
+    #include <stdio.h>
+
+        #define MAX_SIZE 100
+        
+        typedef struct {
+            int data[MAX_SIZE];
+            int front;
+            int rear;
+        } Queue;
+        
+        void initializeQueue(Queue* queue) {
+            queue->front = -1;
+            queue->rear = -1;
+        }
+        
+        int isQueueEmpty(Queue* queue) {
+            return (queue->front == -1 && queue->rear == -1);
+        }
+        
+        int isQueueFull(Queue* queue) {
+            return (queue->rear + 1) % MAX_SIZE == queue->front;
+        }
+        
+        void enqueue(Queue* queue, int value) {
+            if (isQueueFull(queue)) {
+                printf("Queue is full. Unable to enqueue.\n");
+                return;
+            }
+            if (isQueueEmpty(queue)) {
+                queue->front = 0;
+                queue->rear = 0;
+            } else {
+                queue->rear = (queue->rear + 1) % MAX_SIZE;
+            }
+            queue->data[queue->rear] = value;
+        }
+        
+        int dequeue(Queue* queue) {
+            if (isQueueEmpty(queue)) {
+                printf("Queue is empty. Unable to dequeue.\n");
+                return -1; // or any other suitable value indicating failure
+            }
+            int value = queue->data[queue->front];
+            if (queue->front == queue->rear) {
+                queue->front = -1;
+                queue->rear = -1;
+            } else {
+                queue->front = (queue->front + 1) % MAX_SIZE;
+            }
+            return value;
+        }
+        
+        int main() {
+            Queue queue;
+            initializeQueue(&queue);
+        
+            enqueue(&queue, 10);
+            enqueue(&queue, 20);
+            enqueue(&queue, 30);
+        
+            printf("Dequeued: %d\n", dequeue(&queue));
+            printf("Dequeued: %d\n", dequeue(&queue));
+            printf("Dequeued: %d\n", dequeue(&queue));
+        
+            return 0;
+        }
+        
+<h2>Output</h2>
+<p>   1  2  3 </p>
+ </pre>
+ <br>
+ <h3>Deletion in queue:</h3>
+  <br><br>
+  Deletion in a queue, also known as dequeue operation, involves removing an element from the front end of the queue. Here is an example implementation of the dequeue operation in a queue <br><br>
+  <img src="Screenshot 2023-07-23 104749.png" alt=" link-list"><br><br>
+  <pre class="code">
+
+  
+    #include <stdio.h>
+        #include <stdlib.h>
+        #define MAX_SIZE 10
+       
+        struct Queue {
+            int items[MAX_SIZE];
+            int front;
+            int rear;
+        };
+       
+        int isEmpty(struct Queue* queue) {
+            return (queue->front == -1 && queue->rear == -1);
+        }
+        int dequeue(struct Queue* queue) {
+            int data;
+            if (isEmpty(queue)) {
+                printf("Queue is empty\n");
+                return -1;
+            }
+            else if (queue->front == queue->rear) {
+                data = queue->items[queue->front];
+                queue->front = queue->rear = -1;
+            }
+            else {
+                data = queue->items[queue->front];
+                queue->front++;
+            }
+            return data;
+        }
+        
+       
+        int main() {
+            struct Queue queue;
+            queue.front = -1;
+            queue.rear = -1;
+            enqueue(&queue, 10);
+            enqueue(&queue, 20);
+            enqueue(&queue, 30);
+            printf("Elements in queue before dequeue: ");
+            for (int i = queue.front; i <= queue.rear; i++) {
+                printf("%d ", queue.items[i]);
+            }
+            printf("\n");
+            dequeue(&queue);
+            printf("Elements in queue after dequeue: ");
+            for (int i = queue.front; i <= queue.rear; i++) {
+                printf("%d ", queue.items[i]);
+            }
+            printf("\n");
+            return 0;
+        }
+        
+<h2>Output</h2>
+<p>   1  2  3 </p>
+ </pre>
+ <br>
+ <h3>Circular queue</h3>
+ <br><br>
+ A circular queue is a type of queue data structure in which the last element is connected to the first element to form a circle. This allows the queue to use the space more efficiently and avoid the wastage of memory. The circular queue has two pointers, front and rear, that point to the first and last element of the queue, respectively. When an element is added to the rear end, the rear pointer is incremented, and when an element is removed from the front end, the front pointer is incremented.<br><br>
+ <img src="Screenshot 2023-07-23 104532.png" alt=" link-list"><br><br>
+ <pre class="code">
+
+  
+    #include <stdio.h>
+        #include <stdlib.h>
+        
+        #define MAX_SIZE 10
+        
+        typedef struct {
+            int* arr;
+            int front;
+            int rear;
+            int size;
+        } CircularQueue;
+        
+        CircularQueue* createCircularQueue() {
+            CircularQueue* queue = (CircularQueue*)malloc(sizeof(CircularQueue));
+            queue->arr = (int*)malloc(MAX_SIZE * sizeof(int));
+            queue->front = -1;
+            queue->rear = -1;
+            queue->size = 0;
+            return queue;
+        }
+        
+        int isEmpty(CircularQueue* queue) {
+            return queue->size == 0;
+        }
+        
+        int isFull(CircularQueue* queue) {
+            return queue->size == MAX_SIZE;
+        }
+        
+        void enqueue(CircularQueue* queue, int data) {
+            if (isFull(queue)) {
+                printf("Circular queue is full. Enqueue operation failed.\n");
+                return;
+            }
+            
+            if (isEmpty(queue))
+                queue->front = 0;
+        
+            queue->rear = (queue->rear + 1) % MAX_SIZE;
+            queue->arr[queue->rear] = data;
+            queue->size++;
+        }
+        
+        int dequeue(CircularQueue* queue) {
+            if (isEmpty(queue)) {
+                printf("Circular queue is empty. Dequeue operation failed.\n");
+                return -1;
+            }
+            
+            int data = queue->arr[queue->front];
+            queue->front = (queue->front + 1) % MAX_SIZE;
+            queue->size--;
+            
+            if (isEmpty(queue)) {
+                queue->front = -1;
+                queue->rear = -1;
+            }
+            
+            return data;
+        }
+        
+        int peek(CircularQueue* queue) {
+            if (isEmpty(queue)) {
+                printf("Circular queue is empty. Peek operation failed.\n");
+                return -1;
+            }
+            return queue->arr[queue->front];
+        }
+        
+        int main() {
+            CircularQueue* queue = createCircularQueue();
+            
+            enqueue(queue, 10);
+            enqueue(queue, 20);
+            enqueue(queue, 30);
+            enqueue(queue, 40);
+            
+            printf("Front: %d\n", peek(queue));
+            
+            dequeue(queue);
+            dequeue(queue);
+            
+            enqueue(queue, 50);
+            enqueue(queue, 60);
+            
+            while (!isEmpty(queue)) {
+                int element = dequeue(queue);
+                printf("%d ", element);
+            }
+            
+            return 0;
+        }
+        
+<h2>Output</h2>
+<p>   1  2  3 </p>
+ </pre>
+ <br>
+  <h3>Dequeue:</h3>
+  <br>:Dequeue, short for "double-ended queue," is an abstract data type that represents a collection of elements. It allows insertion and removal of elements from both ends, enabling it to function as both a queue and a stack.<br><br>
+ In a dequeue, elements can be added or removed from either the front or the back. This flexibility makes it a versatile data structure suitable for various applications. It offers operations such as: <br><br>
+ EnqueueFront: Add an element to the front of the dequeue. <br><br>
+ EnqueueBack: Add an element to the back of the dequeue. <br><br>
+ DequeueFront: Remove and return the element from the front of the dequeue. <br><br>
+ DequeueBack: Remove and return the element from the back of the dequeue. <br><br>
+ PeekFront: Get the element at the front of the dequeue without removing it. <br><br>
+ PeekBack: Get the element at the back of the dequeue without removing it. <br><br>
+ IsEmpty: Check if the dequeue is empty. <br><br>
+ Size: Get the number of elements in the dequeue. <br><br>
+ Dequeue operations can be performed efficiently in constant time (O(1)) because the underlying data structure typically uses a doubly linked list or a dynamic array to store the elements.
+ Dequeues find applications in scenarios where elements need to be added or removed from both ends, such as implementing algorithms like breadth-first search, sliding window problems, or any situation where you need to maintain a queue-like structure with additional operations.
+ <br><br>
+ <img src="Screenshot 2023-07-23 104034.png" alt=" link-list">
+ <br><br>
+ <pre class="code">
+
+  
+    #include <stdio.h>
+        #include <stdlib.h>
+        #define MAX_SIZE 100
+        typedef struct Dequeue {
+            int* arr;
+            int front;
+            int rear;
+            int size;
+        } Dequeue;
+        Dequeue* createDequeue() {
+            Dequeue* dequeue = (Dequeue*)malloc(sizeof(Dequeue));
+            dequeue->arr = (int*)malloc(MAX_SIZE * sizeof(int));
+            dequeue->front = -1;
+            dequeue->rear = -1;
+            dequeue->size = 0;
+            return dequeue;
+        }
+        int isEmpty(Dequeue* dequeue) {
+            return dequeue->size == 0;
+        }
+        int isFull(Dequeue* dequeue) {
+            return dequeue->size == MAX_SIZE;
+        }
+        void enqueueFront(Dequeue* dequeue, int data) {
+            if (isFull(dequeue)) {
+                printf("Dequeue is full. EnqueueFront operation failed.\n");
+                return;
+            }
+            if (isEmpty(dequeue)) {
+                dequeue->front = 0;
+                dequeue->rear = 0;
+            } else if (dequeue->front == 0) {
+                dequeue->front = MAX_SIZE - 1;
+            } else {
+                dequeue->front--;
+            }
+            dequeue->arr[dequeue->front] = data;
+            dequeue->size++;
+        }
+        void enqueueBack(Dequeue* dequeue, int data) {
+            if (isFull(dequeue)) {
+                printf("Dequeue is full. EnqueueBack operation failed.\n");
+                return;
+            }
+            if (isEmpty(dequeue)) {
+                dequeue->front = 0;
+                dequeue->rear = 0;
+            } else if (dequeue->rear == MAX_SIZE - 1) {
+                dequeue->rear = 0;
+            } else {
+                dequeue->rear++;
+            }
+            dequeue->arr[dequeue->rear] = data;
+            dequeue->size++;
+        }
+        
+        int dequeueFront(Dequeue* dequeue) {
+            if (isEmpty(dequeue)) {
+                printf("Dequeue is empty. DequeueFront operation failed.\n");
+                return -1;
+            }
+            int data = dequeue->arr[dequeue->front];
+            if (dequeue->front == dequeue->rear) {
+                dequeue->front = -1;
+                dequeue->rear = -1;
+          } else if (dequeue->front == MAX_SIZE - 1) {
+                dequeue->front = 0;
+            } else {
+                dequeue->front++;
+            }
+            dequeue->size--;
+            return data;
+        }
+        int dequeueBack(Dequeue* dequeue) {
+            if (isEmpty(dequeue)) {
+                printf("Dequeue is empty. DequeueBack operation failed.\n");
+                return -1;
+            }
+            int data = dequeue->arr[dequeue->rear];
+            if (dequeue->front == dequeue->rear) {
+                dequeue->front = -1;
+                dequeue->rear = -1;
+            } else if (dequeue->rear == 0) {
+                dequeue->rear = MAX_SIZE - 1;
+            } else {
+                dequeue->rear--;
+            }
+            dequeue->size--;
+            return data;
+        }
+        int peekFront(Dequeue* dequeue) {
+            if (isEmpty(dequeue)) {
+                printf("Dequeue is empty. PeekFront operation failed.\n");
+                return -1;
+            }
+            return dequeue->arr[dequeue->front];
+        }
+        int peekBack(Dequeue* dequeue) {
+            if (isEmpty(dequeue)) {
+                printf("Dequeue is empty. PeekBack operation failed.\n");
+                return -1
+           
+           
+<h2>Output</h2>
+<p>   1  2  3 </p>
+ </pre>
+ <br><br>
+
+  <h3>Priority queue</h3>
+  
+  <br><br>
+  A priority queue is an abstract data type that stores elements along with their associated priority. The elements are retrieved from the priority queue based on their priority, with higher-priority elements being dequeued before lower-priority ones..<br><br>
+  <img src="Screenshot 2023-07-23 104316.png" alt=""><br><br>
+  <pre class="code">
+
+    #include <stdio.h>
+        #include <stdlib.h>
+        
+        typedef struct {
+            int priority;
+            int data;
+        } PriorityQueueNode;
+        
+        typedef struct {
+            PriorityQueueNode* nodes;
+            int capacity;
+            int size;
+        } PriorityQueue;
+        
+        PriorityQueue* createPriorityQueue(int capacity) {
+            PriorityQueue* queue = (PriorityQueue*)malloc(sizeof(PriorityQueue));
+            queue->nodes = (PriorityQueueNode*)malloc((capacity + 1) * sizeof(PriorityQueueNode));
+            queue->capacity = capacity;
+            queue->size = 0;
+            return queue;
+        }
+        
+        void enqueue(PriorityQueue* queue, int data, int priority) {
+            if (queue->size == queue->capacity) {
+                printf("Priority queue is full. Enqueue operation failed.\n");
+                return;
+            }
+            
+            PriorityQueueNode newNode;
+            newNode.data = data;
+            newNode.priority = priority;
+            
+            int index = ++(queue->size);
+            
+            while (index != 1 && newNode.priority < queue->nodes[index / 2].priority) {
+                queue->nodes[index] = queue->nodes[index / 2];
+                index /= 2;
+            }
+            
+            queue->nodes[index] = newNode;
+        }
+        
+        int dequeue(PriorityQueue* queue) {
+            if (queue->size == 0) {
+                printf("Priority queue is empty. Dequeue operation failed.\n");
+                return -1;
+            }
+            
+            int minElement = queue->nodes[1].data;
+            PriorityQueueNode lastNode = queue->nodes[queue->size--];
+            
+            int index = 1;
+            int childIndex = 2;
+            
+            while (childIndex <= queue->size) {
+                if (childIndex < queue->size && queue->nodes[childIndex].priority > queue->nodes[childIndex + 1].priority) {
+                    childIndex++;
+                }
+                
+                if (lastNode.priority <= queue->nodes[childIndex].priority) {
+                    break;
+                }
+                
+                queue->nodes[index] = queue->nodes[childIndex];
+                index = childIndex;
+                childIndex *= 2;
+            }
+            
+            queue->nodes[index] = lastNode;
+            
+            return minElement;
+        }
+        
+        int isEmpty(PriorityQueue* queue) {
+            return queue->size == 0;
+        }
+        
+        void clearPriorityQueue(PriorityQueue* queue) {
+            free(queue->nodes);
+            free(queue);
+        }
+        
+        int main() {
+            PriorityQueue* queue = createPriorityQueue(10);
+            
+            enqueue(queue, 10, 3);
+            enqueue(queue, 20, 2);
+            enqueue(queue, 30, 1);
+            enqueue(queue, 40, 5);
+            enqueue(queue, 50, 4);
+            
+            while (!isEmpty(queue)) {
+                int element = dequeue(queue);
+                printf("%d ", element);
+            }
+            
+            clearPriorityQueue(queue);
+            
+            return 0;
+        }
+           
+           
+<h2>Output</h2>
+<p>   1  2  3 </p>
+ </pre>
+ <br><br>
+ <center>
+    <p id="number">2</p>
+    <button class="btn" id="back" onclick="back()">Back</button>
+    <button class="btn" id="next" onclick="next()">Next</button>
+    </center>
+    <br>
+
+
+<script>
+backButton = document.getElementById("back");
+nextButton = document.getElementById("next");
+number = document.getElementById("number");
+var i = 2;
+function ready() {
+backButton.disabled = true;
+}
+function next() {
+     i++;
+     if (i == 5) {
+      nextButton.disabled = true;
+       }
+     backButton.disabled = false;
+   number.innerHTML = i;
+   if(i==3){
+    window.location='../Mahima/linkedlist.html';
+   }
+ }
+
+ function back() {
+       i--;
+        if (i == 1) {
+            window.location='../adt1.html';
+          backButton.disabled = true;
+        }
+         nextButton.disabled = false;
+           number.innerHTML = i;
+     }
+
+</script>
+</body>
+</html>
